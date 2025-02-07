@@ -43,7 +43,7 @@ def get_game_results():
 # Streamlit UI
 # ust.set_page_config(page_title="Game Management", page_icon="🎮")
 st.sidebar.title("🔹 Navigation")
-st.sidebar.page_link("player_registration", label="Register Player")
+st.sidebar.page_link("pages/player_registration.py", label="Register Player")
 
 st.title("🎮 Game Results Management")
 
