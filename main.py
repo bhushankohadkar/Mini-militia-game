@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import pyodbc
 
+
+# st.set_page_config(page_title="Game Management", page_icon="🎮")
+
 # Function to connect to SQL Server
 def get_connection():
     return pyodbc.connect(
@@ -41,9 +44,33 @@ def get_game_results():
     return df
 
 # Streamlit UI
-# ust.set_page_config(page_title="Game Management", page_icon="🎮")
-st.sidebar.title("🔹 Navigation")
-st.sidebar.page_link("pages/player_registration.py", label="Register Player")
+
+# st.sidebar.title("🔹 Navigation")
+# st.sidebar.page_link("pages/player_registration.py", label="Register Player")
+
+# pages = {
+#     "Home Page": [
+#         st.Page("main.py", title="Create your account"),
+#         st.Page("pages/player_registration.py", title="Registration"),
+#     ]
+# }
+
+# ✅ Create Navigation in Sidebar
+# pg = st.navigation([st.Page("pages/player_registration.py", title="Registration"),st.Page("main.py", title="Create your account")], position="sidebar")
+# pg.run()
+# ✅ Run the Navigation System
+# pg.run()
+# Register = st.Page("pages/player_registration.py", title ="Register Player")
+# pg = st.navigation([Register],position="sidebar")
+# pg.run()
+# Home=st.page_link("main.py", label="Home", icon="🏠")
+
+# pg = st.navigation(
+#     [ Home],
+#     position="hidden",
+# )
+# pg.run()
+
 
 st.title("🎮 Game Results Management")
 
