@@ -4,15 +4,26 @@ import pyodbc
 
 
 # st.set_page_config(page_title="Game Management", page_icon="🎮")
-
+# Driver={ODBC Driver 18 for SQL Server};Server=tcp:bhushankoahadkar.database.windows.net,1433;Database=Game;Uid=bhushankohadkar;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
 # Function to connect to SQL Server
 def get_connection():
-    return pyodbc.connect(
-        "DRIVER={ODBC Driver 17 for SQL Server};"
-        "SERVER=DESKTOP-UK7PLJM\\SQLEXPRESS;"
+    # return pyodbc.connect(
+    #     "DRIVER={ODBC Driver 17 for SQL Server};"
+    #     "SERVER=DESKTOP-UK7PLJM\\SQLEXPRESS;"
+    #     "DATABASE=Game;"
+    #     "Trusted_Connection=yes;"
+    # )
+     return pyodbc.connect(
+        "DRIVER={ODBC Driver 18 for SQL Server};"
+        "SERVER=tcp:bhushankoahadkar.database.windows.net,1433;"
         "DATABASE=Game;"
-        "Trusted_Connection=yes;"
+        "UID=bhushankohadkar;"
+        "PWD=Bhushank@11;"
+        "Encrypt=yes;"
+        "TrustServerCertificate=no;"
+        "Connection Timeout=30;"
     )
+
 
 # Function to fetch registered players from Registration table
 def get_registered_players():

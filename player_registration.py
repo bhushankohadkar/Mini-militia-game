@@ -4,11 +4,21 @@ from datetime import datetime
 
 # Database connection
 def get_connection():
+    # return pyodbc.connect(
+    #     "DRIVER={ODBC Driver 17 for SQL Server};"
+    #     "SERVER=DESKTOP-UK7PLJM\\SQLEXPRESS;"
+    #     "DATABASE=Game;"
+    #     "Trusted_Connection=yes;"
+    # )
     return pyodbc.connect(
-        "DRIVER={ODBC Driver 17 for SQL Server};"
-        "SERVER=DESKTOP-UK7PLJM\\SQLEXPRESS;"
+        "DRIVER={ODBC Driver 18 for SQL Server};"
+        "SERVER=tcp:bhushankoahadkar.database.windows.net,1433;"
         "DATABASE=Game;"
-        "Trusted_Connection=yes;"
+        "UID=bhushankohadkar;"
+        "PWD=Bhushank@11;"
+        "Encrypt=yes;"
+        "TrustServerCertificate=no;"
+        "Connection Timeout=30;"
     )
 
 # Function to insert a new player
