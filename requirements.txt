@@ -1,1 +1,3 @@
+pymssql
+sqlalchemy
 pyodbc 

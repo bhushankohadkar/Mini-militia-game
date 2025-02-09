@@ -10,16 +10,30 @@ def get_connection():
     #     "DATABASE=Game;"
     #     "Trusted_Connection=yes;"
     # )
-    return pyodbc.connect(
+
+    # return pyodbc.connect(
+    #     "DRIVER={ODBC Driver 18 for SQL Server};"
+    #     "SERVER=tcp:bhushankoahadkar.database.windows.net,1433;"
+    #     "DATABASE=Game;"
+    #     "UID=bhushankohadkar;"
+    #     "PWD=Bhushank@11;"
+    #     "Encrypt=yes;"
+    #     "TrustServerCertificate=no;"
+    #     "Connection Timeout=30;"
+    # )
+    connection_string = urllib.parse.quote_plus(
         "DRIVER={ODBC Driver 18 for SQL Server};"
         "SERVER=tcp:bhushankoahadkar.database.windows.net,1433;"
         "DATABASE=Game;"
         "UID=bhushankohadkar;"
-        "PWD=Bhushank@11;"
+        "PWD=your_password_here;"
         "Encrypt=yes;"
         "TrustServerCertificate=no;"
         "Connection Timeout=30;"
     )
+    
+    engine = create_engine(f"mssql+pyodbc:///?odbc_connect={connection_string}")
+    return engine.connect()
 
 # Function to insert a new player
 def insert_player(PlayerName, DateOfJoin):
